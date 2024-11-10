@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script scr="script.ts"></script>
+    <title>Sharable Resume Builder</title>
+</head>
+<body>
+<h1>Shareable Resume Builder</h1>
+<form id="resume-form"> 
+    <fieldset>
+        <legend>Profile picture</legend>
+        <div class="form-group"></div>
+            <label for="profile-picture"><i class="icon-image"></i> Profile Picture:</label>
+            <input type="file" id="profile-picture" accept="image/*">
+            <img id="profile-image" src="" alt="Profile Picture Preview" style="display: none;">
+        </div>
+    </fieldset>
+    <fieldset>
+    <legend>Objective</legend>
+    <div class="form-group">
+        <label for="profile-summary"><i class="icon-summary"></i> Summary:</label>
+        <textarea id="profile-summary" placeholder="A brief paragraph about yourself..." required></textarea>
+    </div>
+    </fieldset>
+    <fieldset>
+        <legend>Personal Information</legend>
+        <div class="form-group">
+            <label for="Username"><i class="icon-user"></i> UserName:</label>
+            <input type="text" id="username" placeholder="write Username here" required>
+        </div>
+        <div class="form-group">
+            <label for="name"><i class="icon-user"></i> Name:</label>
+            <input type="text" id="name" placeholder="write name here" required>
+        </div>
+        <div class="form-group">
+            <label for="email"><i class="icon-email"></i> Email:</label>
+            <input type="email" id="email" placeholder="write Email here" required>
+        </div>
+        <div class="form-group">
+            <label for="phone"><i class="icon-phone"></i> Phone:</label>
+            <input type="tel" id="phone" placeholder="add contact number" required>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Education</legend>
+        <div class="form-group">
+            <label for="education-institution"><i class="icon-school"></i> Institution Name:</label>
+            <input type="text" id="education-institution" placeholder="University of Example" required>
+        </div>
+        <div class="form-group">
+            <label for="degree"><i class="icon-degree"></i> Degree:</label>
+            <input type="text" id="degree" placeholder="Bachelor of ..." required>
+        </div>
+        <div class="form-group">
+            <label for="years"><i class="icon-calendar"></i> Years of Study:</label>
+            <input type="text" id="years" placeholder="2001 - 2024" required>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Experience</legend>
+        <div class="form-group">
+            <label for="job-title"><i class="icon-briefcase"></i> Job Title:</label>
+            <input type="text" id="job-title" placeholder="write relevant experience" required>
+        </div>
+        <div class="form-group">
+            <label for="company"><i class="icon-building"></i> Company:</label>
+            <input type="text" id="company" placeholder="company name" required>
+        </div>
+        <div class="form-group">
+            <label for="job-description"><i class="icon-description"></i> Job Description:</label>
+            <textarea id="job-description" placeholder="Describe your responsibilities..." required></textarea>
+        </div>
+        
+    </fieldset>
+    <fieldset>
+        <legend>Skills</legend>
+        <div id="skills-list">
+            <div class="form-group">
+                <label for="skills"><i class="icon-skills"></i> Skills:</label>
+                <textarea id="skills" placeholder="List your skills..." required></textarea>
+            </div>
+        </div>
+    </fieldset>
+   
+    <fieldset>
+        <legend>Optional Sections</legend>
+        <div class="form-group">
+            <label for="certifications"><i class="icon-certificate"></i> Certifications:</label>
+            <textarea id="certifications" placeholder="List your certifications..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="languages"><i class="icon-language"></i> Languages:</label>
+            <textarea id="languages" placeholder="List languages you speak..."></textarea>
+        </div>
+    </fieldset>
+    <button type="submit" onclick="generateResume()">Generate Resume</button>
+</form>
+<br>
+<!--Dynamic & Editable Resume-->
+<div id="resume-display" class="resume-display" contenteditable="true" >
+    <!--Resume will be generated below-->
+</div>
+<!--Section for the shareable link & download option-->
+<div id="shareable-link-container" style="display:none">
+    <h2>Shareable Link</h2>
+    <p>Here is your unique link to view or edit your resume:</p>
+    <a href="#" id="shareable-link" target="_blank"> </a>
+    <br>
+    <button id="download-pdf"><b>Download as PDF</b></button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
